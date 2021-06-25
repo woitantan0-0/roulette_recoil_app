@@ -4,7 +4,14 @@ const APP_KEY = "appRouletteList";
 
 const appState = localStorage.getItem(APP_KEY);
 
-export const rouletteState = atom({
+export const rouletteItemState = atom({
   key: "rouletteItems",
-  default: appState ? JSON.parse(APP_KEY) : [],
+  default: appState ? JSON.parse(appState) : [],
 });
+
+export const rouletteNumState = atom({
+  key: "rouletteNum",
+  default: "?",
+});
+
+export default rouletteItemState;
